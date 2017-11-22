@@ -35,7 +35,7 @@ if [ $CWID -eq $WID ];then
 		CTRL2)
 			xdotool key ctrl+t
 			xdotool key ctrl+l
-			xdotool type " https://ibsbjstar.ccb.com.cn/CCBIS/V6/STY1/CN/login.jsp"
+			xdotool type " https://github.com/sangshz"
 			xdotool key "Return"
 			;;
 		CTRL3)
