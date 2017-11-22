@@ -1,0 +1,101 @@
+#!/bin/bash
+#CWID=`xdotool getwindowfocus`
+CWID=`xdotool getactivewindow`
+WID=`xdotool search --name "Mozilla Firefox" | head -1`
+sleep 0.2
+if [ $CWID -eq $WID ];then
+	case $1 in
+		u)
+			xdotool key ctrl+shift+t
+			;;
+		d)
+			xdotool key ctrl+w
+			;;
+		r)
+			xdotool key ctrl+r
+			;;
+		t)
+			xdotool key ctrl+t
+			;;
+		y)
+			xdotool key ctrl+l ctrl+c Tab Tab
+			;;
+		gg)
+			xdotool key "Home"
+			;;
+		SHIFTg)
+			xdotool key "End"
+			;;
+		CTRL1)
+			xdotool key ctrl+t
+			xdotool key ctrl+l
+			xdotool type " https://arxiv.org/list/hep-ph/new"
+			xdotool key "Return"
+			;;
+		CTRL2)
+			xdotool key ctrl+t
+			xdotool key ctrl+l
+			xdotool type " https://ibsbjstar.ccb.com.cn/CCBIS/V6/STY1/CN/login.jsp"
+			xdotool key "Return"
+			;;
+		CTRL3)
+			xdotool key ctrl+t
+			xdotool key ctrl+l
+			xdotool type " www.baidu.com"
+			xdotool key "Return"
+			;;
+	esac
+fi
+
+#############################################
+#############################################
+#############################################
+WID=`xdotool search --name "Skype" | tail -1`
+#CWID=`xdotool getwindowfocus`
+CWID=`xdotool getactivewindow`
+if [ $CWID -eq $WID ];then
+	case $1 in
+		CTRL1)
+            xdotool click 3 mousemove_relative 0 55;
+            sleep 0.1;
+            xdotool click 1
+            sleep 0.2;
+            xdotool key ctrl+Tab
+            xdotool key ctrl+Tab
+            xdotool key ctrl+f
+            sleep 0.1;
+            xdotool type "Desktop"
+            sleep 0.01;
+            xdotool key "Return"
+			;;
+	esac
+fi
+
+
+
+#############################################
+#############################################
+#############################################
+WID=`xdotool search --name "Oracle VM Virtualbox" | head -1`
+#CWID=`xdotool getwindowfocus`
+CWID=`xdotool getactivewindow`
+if [ $CWID -eq $WID ];then
+	case $1 in
+		ALT1)
+            xdotool type "11"
+            xdotool key "Return"
+			;;
+		ALT2)
+            xdotool type "22"
+            xdotool key "Return"
+			;;
+		ALT3)
+            xdotool type "33"
+            xdotool key "Return"
+			;;
+		ALT4)
+            xdotool type "44"
+            xdotool key "Return"
+			;;
+	esac
+fi
