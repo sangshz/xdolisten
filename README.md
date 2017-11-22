@@ -1,5 +1,5 @@
-# xdolisten  --  shortcut of everything !
-Listening keyboard and to do something. The sever "xdolisten" gets the input of keyboard and mouse.  If meeting  some key, it will  executive command "xdocmd".  "xdocmd" operates firefox with vim-likely shortcut  by the well-known command “xdotool”.  That's an interesting idea rather than code.  This idea can set shortcut for any application program! At least， save me from the update of firefox. 
+# xdolisten  --  shortcuts of everything !
+Listening keyboard and to do something. The sever "xdolisten" gets the input of keyboard and mouse.  If meeting  some key, it will  executive command "xdocmd".  "xdocmd" operates firefox with vim-likely shortcuts  by the well-known command “xdotool”.  That's an interesting idea rather than code.  This idea can set shortcuts for any application program! At least， save me from the update of firefox. 
 
 
 usage method in Ubuntu 14.04：
