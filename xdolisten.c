@@ -23,6 +23,8 @@ int main()
 	struct input_event t;
 	__u16 code_old = 0;
 	bool Shift=false;
+	bool LeftShift=false;
+	bool RightShift=false;
 	bool Alt=false;
 	bool Ctrl=false;
 	while(1)
@@ -31,9 +33,11 @@ int main()
 		{
 			if(t.type == EV_KEY)
 			{
-				if(t.code == KEY_LEFTSHIFT | t.code == KEY_RIGHTSHIFT)Shift=t.value;
 				if(t.code == KEY_LEFTALT | t.code == KEY_RIGHTALT)Alt=t.value;
 				if(t.code == KEY_LEFTCTRL | t.code == KEY_RIGHTCTRL)Ctrl=t.value;
+				if(t.code == KEY_LEFTSHIFT | t.code == KEY_RIGHTSHIFT)Shift=t.value;
+				if(t.code == KEY_LEFTSHIFT)LeftShift=t.value;
+				if(t.code == KEY_RIGHTSHIFT)RightShift=t.value;
 			}
 
 			if(t.type == EV_KEY && t.value == 1)
@@ -108,12 +112,6 @@ int main()
 								system("xdocmd ALT4 ");
 							}
 							break;
-						case KEY_I: 
-							DOOR=false;
-							break;
-						case KEY_A: 
-							DOOR=false;
-							break;
 						default:
 							break;
 					}
@@ -124,10 +122,16 @@ int main()
 					//DOOR=!DOOR;
 					DOOR=true;
 				}
+				if(LeftShift)
+				{
+					DOOR=false;
+				}
 
 				if(!DOOR)
 				{
 					Shift=false;
+					RightShift=false;
+					LeftShift=false;
 					Alt=false;
 					Ctrl=false;
 				}
