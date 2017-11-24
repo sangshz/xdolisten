@@ -1,9 +1,15 @@
 #!/bin/bash
+#############################################
+#############################################
+#############################################
 #CWID=`xdotool getwindowfocus`
 CWID=`xdotool getactivewindow`
 WID=`xdotool search --name "Mozilla Firefox" | head -1`
-sleep 0.2
-if [ $CWID -eq $WID ];then
+WID2=`xdotool search --name "\- Chromium" | head -1`
+if [ ! $WID ]; then WID=-1;fi
+if [ ! $WID2 ]; then WID2=-1;fi
+if [ $CWID -eq $WID -o $CWID -eq $WID2 ];then
+	sleep 0.2
 	case $1 in
 		u)
 			xdotool key ctrl+shift+t
@@ -45,6 +51,7 @@ if [ $CWID -eq $WID ];then
 			xdotool key "Return"
 			;;
 	esac
+	exit
 fi
 
 #############################################
@@ -53,7 +60,9 @@ fi
 WID=`xdotool search --name "Skype" | tail -1`
 #CWID=`xdotool getwindowfocus`
 CWID=`xdotool getactivewindow`
+if [ ! $WID ]; then WID=-1;fi
 if [ $CWID -eq $WID ];then
+	sleep 0.2
 	case $1 in
 		CTRL1)
             xdotool click 3 mousemove_relative 0 55;
@@ -69,6 +78,7 @@ if [ $CWID -eq $WID ];then
             xdotool key "Return"
 			;;
 	esac
+	exit
 fi
 
 
@@ -79,7 +89,9 @@ fi
 WID=`xdotool search --name "Oracle VM Virtualbox" | head -1`
 #CWID=`xdotool getwindowfocus`
 CWID=`xdotool getactivewindow`
+if [ ! $WID ]; then WID=-1;fi
 if [ $CWID -eq $WID ];then
+	sleep 0.2
 	case $1 in
 		ALT1)
             xdotool type "11"
@@ -98,4 +110,5 @@ if [ $CWID -eq $WID ];then
             xdotool key "Return"
 			;;
 	esac
+	exit
 fi
