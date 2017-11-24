@@ -15,20 +15,37 @@ usage method in Ubuntu 14.04：
 5, sudo xdolisten &
 
 
+
 ESC:  shortcuts mode
+
 Shift: normal mode
 
 in Firefox or Chromium,
+
 u: Undo Close Tab 
+
 d: Close Tab
+
 r: Reload
+
 t: New Tab
+
 y: Copy web links of current Tab
+
 gg: Home
+
 RightShift+g: End
+
 CTRL+1: goto the web "https://arxiv.org/list/hep-ph/new"
+
 CTRL+2: goto the web ""
+
 CTRL+3: goto the web ""
 
+
+
+
 in skypeforlinux :
+
 CTRL+1: Download file under cursor
+
