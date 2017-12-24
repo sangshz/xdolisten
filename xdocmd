@@ -49,7 +49,7 @@ if [ $CWID -eq $WID -o $CWID -eq $WID2 ];then
 			#xdotool key "Return"
 			;;
 		CTRL2)
-			sudo -u $username firefox -new-tab https://ibsbjstar.ccb.com.cn/CCBIS/V6/STY1/CN/login.jsp &
+			sudo -u $username firefox -new-tab http://www.sohu.com/ &
 			;;
 		CTRL3)
 			sudo -u $username firefox -new-tab https://www.baidu.com/ &
