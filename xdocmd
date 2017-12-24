@@ -1,4 +1,5 @@
 #!/bin/bash
+username=sanghz
 #############################################
 #############################################
 #############################################
@@ -9,48 +10,49 @@ WID2=`xdotool search --name "\- Chromium" | head -1`
 if [ ! $WID ]; then WID=-1;fi
 if [ ! $WID2 ]; then WID2=-1;fi
 if [ $CWID -eq $WID -o $CWID -eq $WID2 ];then
-	ibusIC=`python /usr/local/bin/xdoibus.py`;ibusICnum=${ibusIC##*_}
-	[ $ibusICnum != 1 ] && exit;
+	ibusIC=`sudo -u $username python /usr/local/bin/xdoibus.py`;ibusICnum=${ibusIC##*_};
 	sleep 0.2
 	case $1 in
 		u)
+			[ $ibusICnum != 1 ] && exit;
 			xdotool key ctrl+shift+t
 			;;
 		d)
+			[ $ibusICnum != 1 ] && exit;
 			xdotool key ctrl+w
 			;;
 		r)
+			[ $ibusICnum != 1 ] && exit;
 			xdotool key ctrl+r
 			;;
 		t)
+			[ $ibusICnum != 1 ] && exit;
 			xdotool key ctrl+t
 			;;
 		y)
+			[ $ibusICnum != 1 ] && exit;
 			xdotool key ctrl+l ctrl+c Tab Tab
 			;;
 		gg)
+			[ $ibusICnum != 1 ] && exit;
 			xdotool key "Home"
 			;;
 		SHIFTg)
+			[ $ibusICnum != 1 ] && exit;
 			xdotool key "End"
 			;;
 		CTRL1)
-			xdotool key ctrl+t
-			xdotool key ctrl+l
-			xdotool type " https://arxiv.org/list/hep-ph/new"
-			xdotool key "Return"
+			sudo -u $username firefox -new-tab https://arxiv.org/list/hep-ph/new &
+			#xdotool key ctrl+t
+			#xdotool key ctrl+l
+			#xdotool type " https://arxiv.org/list/hep-ph/new"
+			#xdotool key "Return"
 			;;
 		CTRL2)
-			xdotool key ctrl+t
-			xdotool key ctrl+l
-			xdotool type "www.sohu.com"
-			xdotool key "Return"
+			sudo -u $username firefox -new-tab https://ibsbjstar.ccb.com.cn/CCBIS/V6/STY1/CN/login.jsp &
 			;;
 		CTRL3)
-			xdotool key ctrl+t
-			xdotool key ctrl+l
-			xdotool type " www.baidu.com"
-			xdotool key "Return"
+			sudo -u $username firefox -new-tab https://www.baidu.com/ &
 			;;
 	esac
 	exit
