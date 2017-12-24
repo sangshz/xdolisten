@@ -9,6 +9,8 @@ WID2=`xdotool search --name "\- Chromium" | head -1`
 if [ ! $WID ]; then WID=-1;fi
 if [ ! $WID2 ]; then WID2=-1;fi
 if [ $CWID -eq $WID -o $CWID -eq $WID2 ];then
+	ibusIC=`python /usr/local/bin/xdoibus.py`;ibusICnum=${ibusIC##*_}
+	[ $ibusICnum != 1 ] && exit;
 	sleep 0.2
 	case $1 in
 		u)
@@ -41,7 +43,7 @@ if [ $CWID -eq $WID -o $CWID -eq $WID2 ];then
 		CTRL2)
 			xdotool key ctrl+t
 			xdotool key ctrl+l
-			xdotool type " https://github.com/sangshz"
+			xdotool type "www.sohu.com"
 			xdotool key "Return"
 			;;
 		CTRL3)
