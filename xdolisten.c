@@ -1,5 +1,5 @@
 //sudo gcc xdolisten.c -o xdolisten
-//xdolisten 实现监听键盘; 通过调用脚本xdocmd来做任何想做的事，其中开关设定为ESC键。xdolisten需要管理员权限
+//xdolisten 实现监听键盘; 通过调用脚本xdocmd来做任何想做的事，其中开关设定为Shift键。xdolisten需要管理员权限
 //目前xdocmd通过xdotool实现firefox快捷键功能
 #include <stdio.h>
 #include <stdlib.h>
