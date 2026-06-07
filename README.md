@@ -1,3 +1,5 @@
+> [English](README.md) | [中文版](README.zh.md)
+
 # xdolisten – Shortcuts for Everything!
 
 `xdolisten` listens to keyboard and mouse input and triggers actions based on key presses. When a specified key or key combination is detected, it executes the `xdocmd` command.  
