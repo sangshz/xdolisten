@@ -1,58 +1,78 @@
-# xdolisten  --  shortcuts of everything !
-Listening keyboard and to do something. The sever "xdolisten" gets the input of keyboard and mouse.  If meeting  some key, it will  executive command "xdocmd".  "xdocmd" operates firefox with vim-likely shortcuts  by the well-known command “xdotool”.  That's an interesting idea rather than code.  This idea can set shortcuts for any application program! At least， save me from the update of firefox. 
-The program records the last pressed key in file /tmp/xdolisten which can be used by your other program
+# xdolisten – Shortcuts for Everything!
 
+`xdolisten` listens to keyboard and mouse input and triggers actions based on key presses. When a specified key or key combination is detected, it executes the `xdocmd` command.  
+`xdocmd` uses the well-known `xdotool` to control Firefox (and other apps) with Vim‑like shortcuts.
 
-usage method in Ubuntu 14.04：
+This is more than just code – it's a powerful idea: **set custom shortcuts for any application!**  
+At the very least, it saves me from the hassle of keeping up with Firefox updates.
 
-1, "cat /proc/bus/input/devices" find the keyboard event num X,then chang "/dev/input/eventX" in xdolisten.c/xdolisten_mini.c. xdolisten_mini.c can find the keyboard event num X only if you input "Vendor" and "Product" for the usb device (usb keyboard)
+The program also records the last pressed key in `/tmp/xdolisten`, which can be used by your own scripts or programs.
 
-2, change the key mapping to satisfy your custom in xdolisten.c/xdolisten_mini.c and xdocmd.
+---
 
-3, gcc xdolisten.c -o xdolisten
+## Usage (Ubuntu 14.04)
 
-4, move "xdolisten" and "xdocmd" to /usr/local/bin/
+1. **Find your keyboard event number**  
+   Run:  
+   `cat /proc/bus/input/devices`  
+   Locate your keyboard and note the `eventX` number.  
+   Then update `/dev/input/eventX` in `xdolisten.c` / `xdolisten_mini.c`.  
 
-5, sudo xdolisten &
+   *For USB keyboards*: `xdolisten_mini.c` can find the event number automatically if you provide `Vendor` and `Product` IDs.
 
+2. **Customize key mappings**  
+   Edit `xdolisten.c` / `xdolisten_mini.c` and `xdocmd` to define your own shortcuts.
 
+3. **Compile**  
+   `gcc xdolisten.c -o xdolisten`
 
-ESC:  shortcuts mode
+4. **Install**  
+   Move `xdolisten` and `xdocmd` to `/usr/local/bin/`
 
-Shift: normal mode
+5. **Run**  
+   `sudo xdolisten &`
 
-in Firefox or Chromium,
+---
 
-u: Undo Close Tab 
+## Shortcut Modes
 
-d: Close Tab
+- **ESC** – Shortcuts mode  
+- **Shift** – Normal mode
 
-r: Reload
+---
 
-t: New Tab
+## Application Shortcuts
 
-y: Copy web links of current Tab
+### Firefox / Chromium
 
-gg: Home
+| Shortcut         | Action                |
+|------------------|-----------------------|
+| `u`              | Undo Close Tab        |
+| `d`              | Close Tab             |
+| `r`              | Reload                |
+| `t`              | New Tab               |
+| `y`              | Copy current tab’s URL|
+| `gg`             | Go to top (Home)      |
+| `RightShift + g` | Go to bottom (End)    |
+| `CTRL+1`         | Open `https://arxiv.org/list/hep-ph/new` |
+| `CTRL+2`         | *(custom URL)*        |
+| `CTRL+3`         | *(custom URL)*        |
 
-RightShift+g: End
+### Skype for Linux
 
-CTRL+1: goto the web "https://arxiv.org/list/hep-ph/new"
+| Shortcut | Action                     |
+|----------|----------------------------|
+| `CTRL+1` | Download file under cursor |
 
-CTRL+2: goto the web ""
+### System
 
-CTRL+3: goto the web ""
+| Shortcut           | Action       |
+|--------------------|--------------|
+| `RightShift + F6`  | Decrease brightness |
+| `RightShift + F5`  | Increase brightness |
 
+---
 
+## Recorded Key
 
-
-in skypeforlinux :
-
-CTRL+1: Download file under cursor
-
-
-in system :
-RightShift + F6/F5 : brightness
-
-recording pressed key:
-/tmp/xdolisten
+The last pressed key is written to `/tmp/xdolisten` – usable by your other programs.
