@@ -1,6 +1,9 @@
 //sudo gcc xdolisten_mini.c -o xdolisten_mini
 //xdolisten 实现监听键盘; 通过调用脚本xdocmd来做任何想做的事，其中开关设定为Shift键。xdolisten需要管理员权限
 //目前xdocmd通过xdotool实现firefox快捷键功能
+
+// H. Z. Sang    sanghz@qq.com    Nov 22, 2017  @treegram
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
