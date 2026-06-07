@@ -1,3 +1,5 @@
+> [English](README.md) | [中文版](README.zh.md)
+
 # xdolisten —— 为一切操作添加快捷键！
 
 `xdolisten` 负责监听键盘和鼠标输入，并在检测到指定按键或组合键时触发相应动作。当设定的按键被按下时，它会执行 `xdocmd` 命令。  
